@@ -70,7 +70,7 @@ public interface IClanRecord {
     default public void removeClanStatistics(ClanStatisticsType clanStatisticsType, int amount) {
         int currentStats = getClanStatisticsAmount(clanStatisticsType);
 
-        if (amount >= currentStats) {
+        if (Math.abs(amount) >= currentStats) {
             setClanStatisticsAmount(clanStatisticsType, 0);
             return;
         }
